@@ -30,17 +30,12 @@ function getPlayerChoice() {
     return prompt("Please Enter either Rock, Paper or Scissors");
 }
 
-for (let i = 1; i <= 10; i++) {
-    console.log(getComputerChoice());
-}
-
-
-
 function playRound() {
     let playerSelection = getPlayerChoice().toLowerCase();
     let computerSelection = getComputerChoice().toLowerCase();
     console.log(playerSelection);
     console.log(computerSelection);
+    let choices_made = `Player chooses ${playerSelection}, Computer chooses ${computerSelection}`;
     let result = '';
     if (playerSelection == 'rock') {
         if (computerSelection == 'rock') {
@@ -86,20 +81,31 @@ function playRound() {
         result = 'Input not valid';
     }
 
-    alert(result);
+    alert(
+        `${choices_made}\n\n${result}`
+    );
 }
 
 // get element when window loads.
 window.onload = function () {
     const start_button = document.getElementById("start-button");
     start_button.addEventListener('click', function () {
-        player_score=0;
-        computer_score=0;
+        player_score = 0;
+        computer_score = 0;
         for (let i = 1; i <= 5; i++) {
             playRound();
             alert(`Player score: ${player_score}, Computer score: ${computer_score}`);
         }
         alert(`Final: Player score: ${player_score}, Computer score: ${computer_score}`);
-        alert(`Winner is ${player_score > computer_score ? 'Player' : 'Computer'}`);
+        let winner = '';
+        if (player_score > computer_score) {
+            winner = 'Player';
+        }
+        else if (player_score == computer_score) {
+            winner = 'No-one';
+        } else {
+            winner = 'Computer';
+        }
+        alert(`${winner} Wins!`);
     }, false);
 }
