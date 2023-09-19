@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="js/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Rock, Paper, Scissors</title>
 </head>
+
 <body>
     <h1>Let's play Rock, Paper, Scissors!</h1>
-    <h3><em>We'll play five rounds</em></h3>
-    <button id="start-button">Begin</button>
+
+    <button id="rock" data-choice="rock">Rock</button>
+    <button id="paper" data-choice="paper">Paper</button>
+    <button id="scissors" data-choice="scissors">Scissors</button>
+
     <hr>
+    <h3>Score</h2>
+
+        <div >
+            <ul id="game-news">
+                
+            </ul>
+            <div id="current-score">
+                <div id="player-score">
+                    <i class="fa fa-user fa-6x" aria-hidden="true"></i>
+                    <h1 id="player-score-value">0</h1>
+                </div>
+                <div id="computer-score">
+                    <i class="fa fa-desktop fa-6x" aria-hidden="true"></i>
+                    <h1 id="computer-score-value">0</h1>
+                </div>
+            </div>
+        </div>
 </body>
+
 </html>
